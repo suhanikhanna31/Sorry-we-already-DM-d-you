@@ -1,0 +1,524 @@
+{
+  "trivial": {
+    "intent_accuracy": 0.047619047619047616,
+    "intent_macro_f1": 0.015151515151515152,
+    "intent_classification_report": {
+      "account_billing": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      },
+      "content_catalog": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      },
+      "feature_request_feedback": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 44.0
+      },
+      "general_complaint_vague": {
+        "precision": 0.047619047619047616,
+        "recall": 1.0,
+        "f1-score": 0.09090909090909091,
+        "support": 10.0
+      },
+      "praise_smalltalk_closed": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 18.0
+      },
+      "technical_playback": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      },
+      "accuracy": 0.047619047619047616,
+      "macro avg": {
+        "precision": 0.007936507936507936,
+        "recall": 0.16666666666666666,
+        "f1-score": 0.015151515151515152,
+        "support": 210.0
+      },
+      "weighted avg": {
+        "precision": 0.0022675736961451248,
+        "recall": 0.047619047619047616,
+        "f1-score": 0.004329004329004329,
+        "support": 210.0
+      }
+    },
+    "confusion_matrix_labels": [
+      "account_billing",
+      "content_catalog",
+      "feature_request_feedback",
+      "general_complaint_vague",
+      "praise_smalltalk_closed",
+      "technical_playback"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        46,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        46,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        44,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        18,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        46,
+        0,
+        0
+      ]
+    ],
+    "escalation_precision": 0.0,
+    "escalation_recall": 0.0,
+    "escalation_f1": 0.0,
+    "escalation_predicted_rate": 0.0,
+    "escalation_gold_rate": 0.11904761904761904,
+    "missed_escalations_n": 25,
+    "missed_escalations_rate": 1.0,
+    "missed_escalation_examples": [
+      {
+        "id": 1,
+        "customer_text": "Help, please?",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 2,
+        "customer_text": "someone has hacked my spotify account. I refuse to pay for someone else to listen to music. It is very unprofessional that you do not provide a contact number. I had to make a Twitter account just to complain. Please contact me immediately and fix the problem.",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 11,
+        "customer_text": "did the wrong payment help us out",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 36,
+        "customer_text": "hello my spotify problem still hasnt fixed and i realized it was bc of my country in apple id since its on korea \ud83d\ude29 so i had to cancel my applemusic subscription as well BUT FUCKING BITCH IT WASNT CANCELLED I STILL HAVE TO WAIT FOR FEW WEEKS TO CANCEL MY MEMBERSHIP IM MAD",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 46,
+        "customer_text": "What gives? I tried to set up a student account. Did not complete the transaction, yet you debited my bank account???",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 48,
+        "customer_text": "I just cant believe that after 2 days it\u2019s not fixed. You can\u2019t imagine the trouble this is causing. Is this gonna happen with all of my new singles? thinking seriously about not using spotify anymore in that case.",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 51,
+        "customer_text": ". Updated our subscription for username celestegurevich but it doesn't show as updated on account. Want to avoid double charge.",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 58,
+        "customer_text": "I have a question about my refund, I sent u a message in your dm",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 64,
+        "customer_text": "Charged me twice and gave me no premium",
+        "escalate_reason": "trivial baseline never escalates"
+      },
+      {
+        "id": 93,
+        "customer_text": "Will Spotify ever get two factor authentication. I had my account hacked today and I'd rather have something stronger than just changing the password.",
+        "escalate_reason": "trivial baseline never escalates"
+      }
+    ],
+    "reply_len_ok_rate": 1.0,
+    "mean_rouge1_f1_vs_reference": 0.1546387210482679
+  },
+  "simple": {
+    "intent_accuracy": 0.6761904761904762,
+    "intent_macro_f1": 0.648229992651939,
+    "intent_classification_report": {
+      "account_billing": {
+        "precision": 0.8857142857142857,
+        "recall": 0.6739130434782609,
+        "f1-score": 0.7654320987654321,
+        "support": 46.0
+      },
+      "content_catalog": {
+        "precision": 0.7948717948717948,
+        "recall": 0.6739130434782609,
+        "f1-score": 0.7294117647058823,
+        "support": 46.0
+      },
+      "feature_request_feedback": {
+        "precision": 0.6944444444444444,
+        "recall": 0.5681818181818182,
+        "f1-score": 0.625,
+        "support": 44.0
+      },
+      "general_complaint_vague": {
+        "precision": 0.25,
+        "recall": 0.8,
+        "f1-score": 0.38095238095238093,
+        "support": 10.0
+      },
+      "praise_smalltalk_closed": {
+        "precision": 0.45714285714285713,
+        "recall": 0.8888888888888888,
+        "f1-score": 0.6037735849056604,
+        "support": 18.0
+      },
+      "technical_playback": {
+        "precision": 0.9393939393939394,
+        "recall": 0.6739130434782609,
+        "f1-score": 0.7848101265822784,
+        "support": 46.0
+      },
+      "accuracy": 0.6761904761904762,
+      "macro avg": {
+        "precision": 0.6702612202612203,
+        "recall": 0.7131349729175817,
+        "f1-score": 0.648229992651939,
+        "support": 210.0
+      },
+      "weighted avg": {
+        "precision": 0.770491466205752,
+        "recall": 0.6761904761904762,
+        "f1-score": 0.7001977708585284,
+        "support": 210.0
+      }
+    },
+    "confusion_matrix_labels": [
+      "account_billing",
+      "content_catalog",
+      "feature_request_feedback",
+      "general_complaint_vague",
+      "praise_smalltalk_closed",
+      "technical_playback"
+    ],
+    "confusion_matrix": [
+      [
+        31,
+        4,
+        2,
+        4,
+        4,
+        1
+      ],
+      [
+        1,
+        31,
+        2,
+        9,
+        3,
+        0
+      ],
+      [
+        2,
+        1,
+        25,
+        6,
+        10,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        8,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        16,
+        1
+      ],
+      [
+        1,
+        2,
+        6,
+        5,
+        1,
+        31
+      ]
+    ],
+    "escalation_precision": 0.42857142857142855,
+    "escalation_recall": 0.6,
+    "escalation_f1": 0.5,
+    "escalation_predicted_rate": 0.16666666666666666,
+    "escalation_gold_rate": 0.11904761904761904,
+    "missed_escalations_n": 10,
+    "missed_escalations_rate": 0.4,
+    "missed_escalation_examples": [
+      {
+        "id": 1,
+        "customer_text": "Help, please?",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 48,
+        "customer_text": "I just cant believe that after 2 days it\u2019s not fixed. You can\u2019t imagine the trouble this is causing. Is this gonna happen with all of my new singles? thinking seriously about not using spotify anymore in that case.",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 105,
+        "customer_text": "whats the point here?",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 120,
+        "customer_text": "Dear , it's been 7 months and you still haven't fixed the lack of queue on the web player. Please fucking get it together. XOXO, Rae",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 134,
+        "customer_text": "So.... it's been awhile... still not fixed.",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 151,
+        "customer_text": "you guys are charging me for premium when the app deleted all my music! I\u2019ve tried calling three times with no response.",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 158,
+        "customer_text": "we\u2019ve got a f\u2019n problem. WHY HAVE YOU TAKEN DOWN CHRIS REA\u2019S \u201cDRIVING HOME FOR CHRISTMAS\u201d?!?!?!? EXPLAIN \ud83d\ude21\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 176,
+        "customer_text": "Contact Spotify",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 185,
+        "customer_text": "Thanks for the reply. People are starting to get fed up with this answer. A little communication would go a long way. It's been over a year",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      },
+      {
+        "id": 192,
+        "customer_text": "my card I used in my spotify account was stolen and already blocked, my new card will arrive after 10 days, will my premium account be suspended? Thank you fam.",
+        "escalate_reason": "naive rule: predicted intent is not account_billing"
+      }
+    ],
+    "reply_len_ok_rate": 1.0,
+    "mean_rouge1_f1_vs_reference": 0.23363045496497994
+  },
+  "main_agent": {
+    "intent_accuracy": 0.6761904761904762,
+    "intent_macro_f1": 0.648229992651939,
+    "intent_classification_report": {
+      "account_billing": {
+        "precision": 0.8857142857142857,
+        "recall": 0.6739130434782609,
+        "f1-score": 0.7654320987654321,
+        "support": 46.0
+      },
+      "content_catalog": {
+        "precision": 0.7948717948717948,
+        "recall": 0.6739130434782609,
+        "f1-score": 0.7294117647058823,
+        "support": 46.0
+      },
+      "feature_request_feedback": {
+        "precision": 0.6944444444444444,
+        "recall": 0.5681818181818182,
+        "f1-score": 0.625,
+        "support": 44.0
+      },
+      "general_complaint_vague": {
+        "precision": 0.25,
+        "recall": 0.8,
+        "f1-score": 0.38095238095238093,
+        "support": 10.0
+      },
+      "praise_smalltalk_closed": {
+        "precision": 0.45714285714285713,
+        "recall": 0.8888888888888888,
+        "f1-score": 0.6037735849056604,
+        "support": 18.0
+      },
+      "technical_playback": {
+        "precision": 0.9393939393939394,
+        "recall": 0.6739130434782609,
+        "f1-score": 0.7848101265822784,
+        "support": 46.0
+      },
+      "accuracy": 0.6761904761904762,
+      "macro avg": {
+        "precision": 0.6702612202612203,
+        "recall": 0.7131349729175817,
+        "f1-score": 0.648229992651939,
+        "support": 210.0
+      },
+      "weighted avg": {
+        "precision": 0.770491466205752,
+        "recall": 0.6761904761904762,
+        "f1-score": 0.7001977708585284,
+        "support": 210.0
+      }
+    },
+    "confusion_matrix_labels": [
+      "account_billing",
+      "content_catalog",
+      "feature_request_feedback",
+      "general_complaint_vague",
+      "praise_smalltalk_closed",
+      "technical_playback"
+    ],
+    "confusion_matrix": [
+      [
+        31,
+        4,
+        2,
+        4,
+        4,
+        1
+      ],
+      [
+        1,
+        31,
+        2,
+        9,
+        3,
+        0
+      ],
+      [
+        2,
+        1,
+        25,
+        6,
+        10,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        8,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        16,
+        1
+      ],
+      [
+        1,
+        2,
+        6,
+        5,
+        1,
+        31
+      ]
+    ],
+    "escalation_precision": 0.9166666666666666,
+    "escalation_recall": 0.44,
+    "escalation_f1": 0.5945945945945946,
+    "escalation_predicted_rate": 0.05714285714285714,
+    "escalation_gold_rate": 0.11904761904761904,
+    "missed_escalations_n": 14,
+    "missed_escalations_rate": 0.56,
+    "missed_escalation_examples": [
+      {
+        "id": 11,
+        "customer_text": "did the wrong payment help us out",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 48,
+        "customer_text": "I just cant believe that after 2 days it\u2019s not fixed. You can\u2019t imagine the trouble this is causing. Is this gonna happen with all of my new singles? thinking seriously about not using spotify anymore in that case.",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 51,
+        "customer_text": ". Updated our subscription for username celestegurevich but it doesn't show as updated on account. Want to avoid double charge.",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 58,
+        "customer_text": "I have a question about my refund, I sent u a message in your dm",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 120,
+        "customer_text": "Dear , it's been 7 months and you still haven't fixed the lack of queue on the web player. Please fucking get it together. XOXO, Rae",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 122,
+        "customer_text": "hey! I noticed that you guys charged me 10.79 instead of applying the student discount. why might that be?",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 134,
+        "customer_text": "So.... it's been awhile... still not fixed.",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 151,
+        "customer_text": "you guys are charging me for premium when the app deleted all my music! I\u2019ve tried calling three times with no response.",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 158,
+        "customer_text": "we\u2019ve got a f\u2019n problem. WHY HAVE YOU TAKEN DOWN CHRIS REA\u2019S \u201cDRIVING HOME FOR CHRISTMAS\u201d?!?!?!? EXPLAIN \ud83d\ude21\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      },
+      {
+        "id": 177,
+        "customer_text": "I have been getting charged for two premium accounts despite having no knowledge of another existing, can you help?",
+        "escalate_reason": "routine request matching a known safe-to-automate pattern"
+      }
+    ],
+    "reply_len_ok_rate": 1.0,
+    "mean_rouge1_f1_vs_reference": 0.8580323233882636
+  }
+}

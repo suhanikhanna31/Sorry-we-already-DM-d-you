@@ -1,0 +1,42 @@
+# --- Raw dataset (gated/licensed Kaggle data — never commit this) ---
+# See README.md "Step 1: get the dataset" for how to fetch it.
+data_raw/*
+!data_raw/.gitkeep
+*.csv.zip
+archive-2.zip
+archive-2_2.zip
+twcs.csv
+
+# --- Derived data & model artifacts ---
+# All deterministically regenerated from data_raw/ by src/prepare_data.py ->
+# src/build_silver_corpus.py -> src/classifier.py -> src/retrieval.py.
+# Keeping these out of the repo keeps it small; see README.md for the exact
+# regeneration commands and MANIFEST.md for expected row counts.
+data/*.csv
+data/*.pkl
+!data/.gitkeep
+
+# --- Eval artifacts that are regenerated, not hand-authored ---
+# golden_set.csv and judge_scores.csv ARE checked in (they're the graded
+# deliverables, derived from hand-authored golden_labels.py /
+# judge_scores_manual_data.py) — only the truly ephemeral live-run outputs
+# below are ignored.
+eval/results/judge_scores_live.csv
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- OS / editor cruft ---
+.DS_Store
+__MACOSX/
+.vscode/
+.idea/

@@ -1,0 +1,4 @@
+This directory holds regenerated derived artifacts (cleaned corpus, trained
+classifier, retrieval index) and is gitignored (see ../.gitignore) -- nothing
+here is committed except this placeholder. Run the pipeline in README.md
+"Step 2" to populate it.

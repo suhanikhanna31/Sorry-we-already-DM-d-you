@@ -1,0 +1,16 @@
+# Core pipeline (offline / local mode -- this is all you need for the
+# under-15-minute reproducible path described in README.md).
+pandas>=1.5,<3
+numpy>=1.23,<3
+scikit-learn>=1.2,<2
+langdetect>=1.0.9,<2
+
+# Dev / CI only (linting, tests). Not required to run the pipeline itself.
+pytest>=7.0,<9
+flake8>=6.0,<8
+
+# Optional: only needed for --mode llm (src/llm_agent.py) and the live
+# LLM-as-judge run (eval/llm_judge.py --out eval/results/judge_scores_live.csv).
+# Both use urllib directly against api.anthropic.com, so no extra package is
+# actually required -- listed here only as a reminder that ANTHROPIC_API_KEY
+# must be set in the environment for those two entry points.

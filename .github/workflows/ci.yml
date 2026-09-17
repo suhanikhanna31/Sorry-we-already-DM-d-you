@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Lint (syntax errors / undefined names only -- style is not gated)
+        run: flake8 src eval tests --select=E9,F63,F7,F82 --show-source
+
+      - name: Unit tests (escalation policy, draft adaptation, weak labeler)
+        run: pytest tests/ -v
+
+      - name: Reproducibility check (golden set + judge scores vs. hand-authored source)
+        run: pytest tests/test_reproducibility.py -v
+
+  pipeline-smoke-test:
+    runs-on: ubuntu-latest
+    # This does NOT use the real Kaggle dataset (no credentials in CI, and
+    # the real file is ~500MB / gitignored -- see README.md "Step 1"). It
+    # instead fabricates a tiny synthetic twcs.csv with the same schema and
+    # runs every stage of the real pipeline end-to-end, to catch integration
+    # breaks (a renamed column, a broken import, a missing script) on every
+    # push -- something the unit tests above can't catch on their own.
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fabricate a tiny synthetic raw dataset (same schema as Kaggle's twcs.csv)
+        run: python .github/scripts/make_fake_twcs.py
+
+      - name: Run the real pipeline end-to-end
+        run: |
+          python src/prepare_data.py
+          python src/build_silver_corpus.py
+          python src/classifier.py
+          python src/retrieval.py
+
+      - name: Exercise the agent CLI on a sample message
+        run: echo "the app keeps crashing on my phone" | python src/agent.py
+
+      - name: Run the eval harness against the real (checked-in) golden set
+        run: python eval/run_eval.py
+
+      - name: Upload smoke-test eval outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-test-eval-results
+          path: eval/results/

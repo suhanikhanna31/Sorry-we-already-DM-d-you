@@ -1,0 +1,6 @@
+This directory holds the raw Kaggle dataset and is gitignored (see
+../.gitignore) -- nothing here is committed except this placeholder.
+
+Expected path after setup: data_raw/archive-2/twcs/twcs.csv
+
+See ../README.md, "Step 1: get the dataset," for exactly how to fetch it.
